@@ -1,0 +1,21 @@
+.edit-user-form {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-fields {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
