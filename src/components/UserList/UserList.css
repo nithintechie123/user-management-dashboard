@@ -1,7 +1,15 @@
 .user-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
+
+    @media  screen and (max-width:768px) {
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      overflow-x: scroll;
+    }
   }
   
   .user-card {

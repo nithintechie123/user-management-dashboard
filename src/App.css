@@ -38,3 +38,21 @@ h1 {
   text-align: center;
   color: #333;
 }
+
+.pagination-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+}
+.current-page-num{
+  font-weight: bold;
+  margin: 0 8px;
+}
+.pagination-buttons{
+  cursor: pointer;
+}

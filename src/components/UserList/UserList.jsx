@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UserList.css';
 
+const itemsPerPage=4;
+
 const UserList = ({ users, onEdit, onDelete }) => {
+
   return (
     <div className="user-list">
       {users.map((user) => (
