@@ -37,6 +37,7 @@
 h1 {
   text-align: center;
   color: #333;
+  margin: 0px;
 }
 
 .pagination-container{

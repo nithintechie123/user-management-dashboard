@@ -4,8 +4,9 @@ const UserContext = createContext(
     {
       theme: false,
       toggleTheme: () => {
-        
+
       },
+      modelIsOpen: false,
 
     }
   

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaRegArrowAltCircleLeft,FaRegArrowAltCircleRight } from "react-icons/fa";
 
+
 import axios from 'axios';
 import UserList from "./components/UserList/UserList";
 import AddUserForm from "./components/AddUserForm/AddUserForm";
@@ -8,6 +9,7 @@ import EditUserForm from "./components/EditUserForm/EditUserForm";
 
 
 import './App.css';
+import paginatedData from './components/Pagination';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -16,15 +18,8 @@ const App = () => {
   const [isEditing, setIsEditing] = useState(false);//isEditing is used to check if the user is editing
   const [editingUser, setEditingUser] = useState(null);//editingUser is used to edit the user
   const [newUser, setNewUser] = useState({ name: '', email: '', department: '' });//new user is used to add a new user
-  const [currentPage,setCurrentPage] = useState(1);
+  const [currentPage,setCurrentPage]=useState(1);
 
-  //pagination
-  const usersPerPage=4;
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-  const totalUsers = users.length;
-  const totalPages = Math.ceil(totalUsers / usersPerPage);
 
   //fetching the users from the API
   useEffect(() => {
@@ -79,8 +74,14 @@ const App = () => {
     }
   };
 
+  const paginatedUsersData=paginatedData(users,currentPage);
+
+  const {currentUsers,totalPages}=paginatedUsersData;
+
+
   return (
-    <div className="app-container">
+   
+      <div className="app-container">
       <h1>User Management Dashboard</h1>
       <div className='add-user-user-list-container'>
         <AddUserForm 
@@ -113,8 +114,8 @@ const App = () => {
           <FaRegArrowAltCircleRight/>
         </button>
       </div>
-      
     </div>
+
   );
 };
 
